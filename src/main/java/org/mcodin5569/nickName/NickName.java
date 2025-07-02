@@ -2,16 +2,20 @@ package org.mcodin5569.nickName;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class NickName extends JavaPlugin {
+public class NickName extends JavaPlugin {
+
+    private static NickName instance;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        instance = this;
 
+        getCommand("nick").setExecutor(new NickCommand());
+
+        getLogger().info("NickName wurde aktiviert!");
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+    public static NickName getInstance() {
+        return instance;
     }
 }
