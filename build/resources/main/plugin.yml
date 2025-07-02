@@ -1,0 +1,4 @@
+name: NickName
+version: '1.0-SNAPSHOT'
+main: org.mcodin5569.nickName.NickName
+api-version: '1.20'
